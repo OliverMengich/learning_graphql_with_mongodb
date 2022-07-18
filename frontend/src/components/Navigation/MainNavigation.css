@@ -40,7 +40,6 @@
     margin: 0;
 }
 .main-navigation__items a:hover,
-.main-navigation a .active
 .main-navigation a:active,
 .main-navigation__items button:hover,
 .main-navigation__items button:active{
