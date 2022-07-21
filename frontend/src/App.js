@@ -8,7 +8,6 @@ import './App.css';
 import AuthContext from './context/auth-context';
 import MainNavigation from './components/Navigation/MainNavigation.jsx';
 class App extends Component{
-  
   state = {
     token: null,
     userId: null
@@ -49,7 +48,8 @@ class App extends Component{
                   {!this.state.token && (
                     <Route path="/auth" element={<AuthPage/>}/>
                   )} */}
-                  <Route path="/" element={ ()=> this.state.token? <Navigate to="/events"/> : <Navigate to="/auth" />}/>
+                  <Route path="/" element={ <EventsPage/> }/>
+                  {/* <Route path="/" element={ ()=> this.state.token? <Navigate to="/events"/> : <Navigate to="/auth" />}/> */}
                   <Route path='/auth' element={ this.state.token? <Navigate to="/events" /> : <AuthPage/> }/>
                   {/* <Route path="/auth"  exact/> */}
                   <Route path="/events" element={<EventsPage/>} exact/>

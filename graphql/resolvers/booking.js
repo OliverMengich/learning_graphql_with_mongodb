@@ -15,7 +15,7 @@ module.exports = {
         }
         try {
             //get all bookings from database
-            const bookings = await Booking.find();
+            const bookings = await Booking.find({user:req.userId});
             return bookings.map(booking =>{
                 return transformBooking(booking)
             })
