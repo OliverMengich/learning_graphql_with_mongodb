@@ -86,7 +86,7 @@ class BookingPage extends Component{
             this.setState({bookings, isLoading: false});
         })
         .catch(err=>{
-            console.log(err)
+            console.log(err);
             this.setState({isLoading: false});
         })
     }
@@ -96,7 +96,11 @@ class BookingPage extends Component{
             <React.Fragment>
                 {
                     this.state.isLoading ? <p>Loading.....</p> : (
-                        <BookingList bookings={this.state.bookings} onDelete={this.deleteBookingHandler}/>
+                        this.state.bookings.length !== 0?
+                            (
+                                <BookingList bookings={this.state.bookings} onDelete={this.deleteBookingHandler}/>
+                            ): <h2>You have no Bookings Go to events and book an event</h2>
+                        
                     )
                 }
             </React.Fragment>

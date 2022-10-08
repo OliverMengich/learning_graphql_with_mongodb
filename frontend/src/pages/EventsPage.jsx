@@ -214,7 +214,6 @@ class EventsPage extends Component{
                                 <label htmlFor="description">Description</label>
                                 <textarea id="description" name="description" placeholder="Description of the event" ref={this.descriptionElRef}></textarea>
                             </div>
-
                         </form>
                     </Modal>
                 }
